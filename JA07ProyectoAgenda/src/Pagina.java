@@ -31,4 +31,20 @@ public class Pagina {
             }
         }       
     }
+    
+    public Cita BuscarCita(int hora, int minutos){
+        
+        Cita busqueda = null, temp;
+        int cont = 0;
+        boolean encontrado = false;
+        
+        while (cont < this.citas.size() && encontrado == false) {
+            temp = this.citas.get(cont++);
+            if (temp.getHora() == hora && temp.getMinutos() == minutos) {
+                busqueda = temp;
+                encontrado = true;
+            }
+        }
+        return busqueda;
+    }
 }
